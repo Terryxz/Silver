@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  Silver
 //
 //  Created by Kai on 16/5/28.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface SecondViewController : UIViewController
+@interface HomeViewController : BaseViewController
 
 
 @end
