@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BaseViewController.h"
+#import "HomeViewController.h"
+#import "ExploreViewController.h"
+#import "MeViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

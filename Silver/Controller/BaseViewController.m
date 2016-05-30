@@ -16,6 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.hidden=YES;
+    self.view.backgroundColor=[UIColor whiteColor];
+    
+    
+
+        if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+        }
+
     // Do any additional setup after loading the view.
 }
 
@@ -23,7 +33,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidLayoutSubviews
+{
+   
+}
 /*
 #pragma mark - Navigation
 

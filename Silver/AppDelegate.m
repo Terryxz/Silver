@@ -18,11 +18,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
+    self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UITabBarController *tabBar = [story instantiateViewControllerWithIdentifier:@"tab"];
-    tabBar.tabBar.tintColor=[UIColor colorWithRed:255.0/255.0 green:124.0/255.0 blue:56.0/255.0 alpha:1.0];
-    // Override point for customization after application launch.
+    
+    HomeViewController*home=[[HomeViewController alloc]init];
+    ExploreViewController*explore=[[ExploreViewController alloc]init];
+    MeViewController*me=[[MeViewController alloc]init];
+    
+    UINavigationController*homeNavi=[[UINavigationController alloc]initWithRootViewController:home];
+    UINavigationController*exploreNavi=[[UINavigationController alloc]initWithRootViewController:explore];
+    UINavigationController*meNavi=[[UINavigationController alloc]initWithRootViewController:me];
+    homeNavi.tabBarItem=[[UITabBarItem alloc]initWithTitle:@"首页" image:[UIImage imageNamed:@"Tab_Home_N"] selectedImage:[UIImage imageNamed:@"Tab_Home_P"]];
+    
+    exploreNavi.tabBarItem=[[UITabBarItem alloc]initWithTitle:@"发现" image:[UIImage imageNamed:@"Tab_Product_N"] selectedImage:[UIImage imageNamed:@"Tab_Product_P"]];
+    
+    meNavi.tabBarItem=[[UITabBarItem alloc]initWithTitle:@"我" image:[UIImage imageNamed:@"Tab_User_N"] selectedImage:[UIImage imageNamed:@"Tab_User_P"]];
+    UITabBarController*tab=[[UITabBarController alloc]init];
+    tab.viewControllers=@[homeNavi,exploreNavi,meNavi];
+     tab.tabBar.tintColor=[UIColor colorWithRed:255.0/255.0 green:124.0/255.0 blue:56.0/255.0 alpha:1.0];
+    tab.selectedIndex=0;
+    self.window.rootViewController=tab;
+    [self.window makeKeyAndVisible];
+    [UIApplication sharedApplication].statusBarHidden=YES;
+    [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleLightContent;
+    
     return YES;
 }
 
