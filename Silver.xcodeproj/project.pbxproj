@@ -16,6 +16,7 @@
 		2A5EDC8B1CF9D42E00E8EA6B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EDC871CF9D42E00E8EA6B /* HomeViewController.m */; };
 		2A5EDC8C1CF9D42E00E8EA6B /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EDC891CF9D42E00E8EA6B /* MeViewController.m */; };
 		2A5EDC901CFADA6700E8EA6B /* TitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EDC8F1CFADA6700E8EA6B /* TitleScrollView.m */; };
+		2A6F19BD1D08503400576F2E /* SilverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F19BC1D08503400576F2E /* SilverManager.m */; };
 		2A71DB1F1CFAFCCF00AA53EE /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A71DB1E1CFAFCCF00AA53EE /* Utility.m */; };
 		2A71DB891CFB121300AA53EE /* alert_error_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A71DB211CFB121300AA53EE /* alert_error_icon@2x.png */; };
 		2A71DB8A1CFB121300AA53EE /* alert_success_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A71DB221CFB121300AA53EE /* alert_success_icon@2x.png */; };
@@ -146,6 +147,8 @@
 		2A5EDC8F1CFADA6700E8EA6B /* TitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScrollView.m; sourceTree = "<group>"; };
 		2A5EDC911CFADDDC00E8EA6B /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		2A5EDC921CFADE7C00E8EA6B /* Silver-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Silver-Prefix.pch"; sourceTree = "<group>"; };
+		2A6F19BB1D08503400576F2E /* SilverManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SilverManager.h; sourceTree = "<group>"; };
+		2A6F19BC1D08503400576F2E /* SilverManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SilverManager.m; sourceTree = "<group>"; };
 		2A71DB1D1CFAFCCF00AA53EE /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		2A71DB1E1CFAFCCF00AA53EE /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		2A71DB211CFB121300AA53EE /* alert_error_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert_error_icon@2x.png"; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 			children = (
 				2A71DB1D1CFAFCCF00AA53EE /* Utility.h */,
 				2A71DB1E1CFAFCCF00AA53EE /* Utility.m */,
+				2A6F19BB1D08503400576F2E /* SilverManager.h */,
+				2A6F19BC1D08503400576F2E /* SilverManager.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 				2A5EDC651CF9929400E8EA6B /* main.m in Sources */,
 				2A71DBF31CFB159000AA53EE /* SilverView.m in Sources */,
 				2A5EDC8A1CF9D42E00E8EA6B /* ExploreViewController.m in Sources */,
+				2A6F19BD1D08503400576F2E /* SilverManager.m in Sources */,
 				2A5EDC8B1CF9D42E00E8EA6B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

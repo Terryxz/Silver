@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "TitleScrollView.h"
 #import "SilverView.h"
+#import "SilverManager.h"
 
 @interface HomeViewController ()<TitleScrollDelegate>
 
@@ -16,6 +17,7 @@
 @property(nonatomic,strong)NSArray*titleArray;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) SilverView *silerView;
+@property (nonatomic, strong) AFURLSessionManager* manager;
 @end
 
 @implementation HomeViewController
@@ -27,12 +29,38 @@
     [self initScrollViewAndTableView];
     
     
+    
 
 }
 
 -(void)prepareData
 {
+    
+    
     self.titleArray=@[@"精选",@"信托",@"资管",@"阳光私募",@"私募基金",@"海外保险"];
+    
+    
+    
+    SilverManager* silver=[SilverManager sharedManager];
+    
+    
+    NSURL *URL = [NSURL URLWithString:@"http://httpbin.org/get"];
+    NSString*URLString=@"http://api.siyinjia.com//1.0/other/config/info1?city_id=0&platform=iphone&platform_version=9.3.2&device_id=fb83d5ce4fea33f51a7de80da79cd2341fa2a343&network_type=Wifi&channel=appstore&app_version=4.1.0&id_customer=0&customer_id=0&type_member=0&md5=1286fe";
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:URLString parameters:nil error:nil];;
+    
+    
+    
+    
+    NSURLSessionDataTask *dataTask = [silver.netManager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"%@ %@", response, responseObject);
+        }
+    }];
+    [dataTask resume];
+
+
 }
 -(void)initTitleView
 {
@@ -74,7 +102,7 @@
         if (idx==0)
         {
             self.silerView=silerView;
-            silerView.tableView.backgroundColor=[UIColor orangeColor];
+           // silerView.tableView.backgroundColor=[UIColor orangeColor];
         }
         
 

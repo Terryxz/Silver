@@ -30,6 +30,28 @@
         
         [self addSubview:self.tableView];
         
+        __unsafe_unretained __typeof(self) weakSelf = self;
+        
+        MJRefreshNormalHeader* refreshHeader=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            
+            
+            NSLog(@"刷新")    ;
+             [weakSelf.tableView.mj_header performSelector:@selector(endRefreshing) withObject:nil afterDelay:2.0];
+        }];
+        
+        
+        MJRefreshAutoNormalFooter* refreshFooter=[MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+           
+            
+            NSLog(@"加载更多") ;
+            
+            [weakSelf.tableView.mj_footer performSelector:@selector(endRefreshing) withObject:nil afterDelay:0.5];
+        }];
+        
+        self.tableView.mj_header=refreshHeader;
+        self.tableView.mj_footer=refreshFooter;
+        
+        
     }
     return self;
 }
